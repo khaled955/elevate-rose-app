@@ -1,0 +1,19 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+/**
+ * Debounce any value changes.
+ * @param value The input value
+ * @param delay Debounce delay in ms (default 400)
+ */
+export function useDebouncedValue<T>(value: T, delay = 400) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const id = window.setTimeout(() => setDebouncedValue(value), delay);
+    return () => window.clearTimeout(id);
+  }, [value, delay]);
+
+  return debouncedValue;
+}

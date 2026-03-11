@@ -1,0 +1,91 @@
+{
+  "message": "success",
+  "metadata": {
+    "currentPage": 1,
+    "totalPages": 5,
+    "limit": 10,
+    "totalItems": 50
+  },
+  "notifications": [
+    {
+      "id": "notif_001",
+      "type": "order",
+      "title": "Order Confirmed",
+      "description": "Your rose order #1023 has been confirmed.",
+      "isRead": false,
+      "createdAt": "2026-01-05T18:20:00Z"
+    },
+    {
+      "id": "notif_002",
+      "type": "delivery",
+      "title": "Out for Delivery",
+      "description": "Your bouquet is on the way 💐",
+      "isRead": false,
+      "createdAt": "2026-01-05T16:10:00Z"
+    },
+    {
+      "id": "notif_003",
+      "type": "promo",
+      "title": "Valentine Offer ❤️",
+      "description": "Get 20% off on all red roses today only!",
+      "isRead": true,
+      "createdAt": "2026-01-04T14:00:00Z"
+    },
+    {
+      "id": "notif_004",
+      "type": "order",
+      "title": "Order Delivered",
+      "description": "Your flowers were delivered successfully.",
+      "isRead": true,
+      "createdAt": "2026-01-03T19:45:00Z"
+    },
+    {
+      "id": "notif_005",
+      "type": "reminder",
+      "title": "Upcoming Event",
+      "description": "Don't forget your anniversary tomorrow 🌹",
+      "isRead": false,
+      "createdAt": "2026-01-03T09:00:00Z"
+    },
+    {
+      "id": "notif_006",
+      "type": "wishlist",
+      "title": "Back in Stock",
+      "description": "Your favorite pink roses are available again.",
+      "isRead": true,
+      "createdAt": "2026-01-02T20:30:00Z"
+    },
+    {
+      "id": "notif_007",
+      "type": "promo",
+      "title": "Free Delivery 🚚",
+      "description": "Free delivery on orders above 500 EGP.",
+      "isRead": false,
+      "createdAt": "2026-01-02T12:15:00Z"
+    },
+    {
+      "id": "notif_008",
+      "type": "system",
+      "title": "Profile Updated",
+      "description": "Your profile information was updated successfully.",
+      "isRead": true,
+      "createdAt": "2026-01-01T17:00:00Z"
+    },
+    {
+      "id": "notif_009",
+      "type": "order",
+      "title": "Payment Received",
+      "description": "Payment for order #1019 was successful.",
+      "isRead": true,
+      "createdAt": "2026-01-01T13:40:00Z"
+    },
+    {
+      "id": "notif_010",
+      "type": "delivery",
+      "title": "Preparing Your Order",
+      "description": "We're preparing your bouquet with love 💕",
+      "isRead": false,
+      "createdAt": "2025-12-31T21:10:00Z"
+    }
+  ]
+}
