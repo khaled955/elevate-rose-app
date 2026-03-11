@@ -1,36 +1,153 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌹 Elevate Rose App
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-14-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-Utility--First-38BDF8)
+![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-Components-000000)
+![TanStack Query](https://img.shields.io/badge/TanStack_Query-v5-FF4154)
+![next-intl](https://img.shields.io/badge/next--intl-i18n%20%7C%20RTL-8B5CF6)
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-First, run the development server:
+A full-stack flower shop platform with a customer-facing storefront and a complete admin dashboard — built with **Next.js 14**, **TypeScript**, and **shadcn/ui**, with full **Arabic/English (RTL/LTR)** support.
+
+---
+
+## 🔗 Live Links
+
+- 🌐 **Live Demo:** https://elevate-rose-app-two.vercel.app/en
+- 👨‍💻 **Portfolio:** https://khaledmansour.vercel.app
+- 💻 **GitHub Repository:** https://github.com/khaled955/elevate-rose-app
+
+---
+
+## 📌 Features
+
+- 🌸 **Storefront** — Browse flowers by category or occasion, add to cart, and place orders
+- 💳 **Dual Payment** — Cash on delivery or online payment at checkout
+- 🗺️ **Map Integration** — Delivery address selection with react-leaflet
+- 🔐 **Authentication** — Secure login & registration via NextAuth.js
+- 🧑‍💼 **Admin Dashboard** — Full CRUD for products, categories, and occasions
+- 📊 **Data Visualization** — Revenue and order status charts with Recharts
+- 🌍 **i18n & RTL** — Full Arabic/English support via next-intl with RTL layout
+- 🎨 **Maroon Design System** — Custom Tailwind color tokens (maroon/zinc)
+- 📱 **Fully Responsive** — Mobile-first layout across all pages
+- ⚡ **Optimistic UI** — TanStack Query with mutations, toasts, and cache invalidation
+- 🧱 **Clean Architecture** — Server actions, route handlers, and reusable components
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Framework** | Next.js 14 (App Router) |
+| **Language** | TypeScript (strict) |
+| **Styling** | Tailwind CSS + custom design tokens |
+| **UI Components** | shadcn/ui + Radix UI |
+| **Data Fetching** | TanStack Query v5 |
+| **Forms & Validation** | React Hook Form + Zod |
+| **Auth** | NextAuth.js v4 |
+| **i18n** | next-intl (EN/AR, RTL support) |
+| **Charts** | Recharts |
+| **Maps** | react-leaflet |
+| **Notifications** | Sonner |
+| **Carousel** | Embla Carousel |
+| **Deployment** | Vercel |
+
+---
+
+## 📂 Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+├── app/
+│   ├── [locale]/
+│   │   ├── (auth)/               # Login, register, forget-password
+│   │   ├── (dashboard)/          # Admin dashboard pages
+│   │   │   └── dashboard/
+│   │   │       ├── categories/
+│   │   │       ├── occasions/
+│   │   │       ├── products/
+│   │   │       └── profile/
+│   │   └── (main)/               # Customer-facing storefront
+│   │       ├── (protected)/
+│   │       │   └── checkout-flow/
+│   │       └── ...               # Home, shop, product detail
+│   └── api/                      # Route handlers
+├── components/                   # Reusable UI components
+│   ├── dashboard/
+│   ├── shared/
+│   └── ui/                       # shadcn/ui primitives
+├── hooks/                        # Custom React hooks
+├── lib/                          # Utilities & helpers
+├── actions/                      # Server actions
+├── services/                     # API service layer
+├── types/                        # Global TypeScript types
+├── messages/                     # i18n translation files (en/ar)
+├── public/                       # Static assets
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌐 Internationalization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The app supports **English** and **Arabic** with full RTL layout switching. Language is controlled via the `[locale]` route segment using `next-intl`.
 
-## Learn More
+- `/en/...` → English (LTR)
+- `/ar/...` → Arabic (RTL)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Prerequisites
 
-## Deploy on Vercel
+- Node.js 18+
+- pnpm 10+
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# Clone the repository
+git clone https://github.com/khaled955/elevate-rose-app.git
+cd elevate-rose-app
+
+# Install dependencies
+pnpm install
+
+# Copy environment variables
+cp .env.example .env.local
+```
+
+### Environment Variables
+
+```env
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_secret
+NEXT_PUBLIC_API_URL=https://your-backend-api.com
+```
+
+### Run Development Server
+
+```bash
+pnpm dev
+```
+
+Open [http://localhost:3000/en](http://localhost:3000/en) in your browser.
+
+---
+
+## 📸 Screenshots
+
+> Dashboard, storefront, and checkout screenshots coming soon.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+<p align="center">Built with ❤️ by <a href="https://khaledmansour.vercel.app">Khaled</a></p>
