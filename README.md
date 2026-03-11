@@ -124,8 +124,8 @@ cp .env.example .env.local
 
 ```env
 NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=your_secret
-NEXT_PUBLIC_API_URL=https://your-backend-api.com
+NEXTAUTH_SECRET=e0iO3qWlRiW6L9V6IkFjIUXXnGM+D/AXJeWLVXkTc2E=
+NEXT_PUBLIC_API_URL=https://flower.elevateegy.com/api/v1
 ```
 
 ### Run Development Server
@@ -138,16 +138,7 @@ Open [http://localhost:3000/en](http://localhost:3000/en) in your browser.
 
 ---
 
-## 📸 Screenshots
 
-> Dashboard, storefront, and checkout screenshots coming soon.
 
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
 
 <p align="center">Built with ❤️ by <a href="https://khaledmansour.vercel.app">Khaled</a></p>
