@@ -21,6 +21,17 @@ A full-stack flower shop platform with a customer-facing storefront and a comple
 
 ---
 
+## 🔑 Demo Admin Account
+
+| Field | Value |
+|---|---|
+| **Email** | `shamsmedhat1@gmail.com` |
+| **Password** | `Shams@123` |
+
+> ⚠️ This is a shared demo account for testing purposes only.
+
+---
+
 ## 📌 Features
 
 - 🌸 **Storefront** — Browse flowers by category or occasion, add to cart, and place orders
@@ -124,7 +135,7 @@ cp .env.example .env.local
 
 ```env
 NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=e0iO3qWlRiW6L9V6IkFjIUXXnGM+D/AXJeWLVXkTc2E=
+NEXTAUTH_SECRET=your_nextauth_secret_here
 NEXT_PUBLIC_API_URL=https://flower.elevateegy.com/api/v1
 ```
 
@@ -138,7 +149,16 @@ Open [http://localhost:3000/en](http://localhost:3000/en) in your browser.
 
 ---
 
+## 📸 Screenshots
 
+> Dashboard, storefront, and checkout screenshots coming soon.
 
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
 
 <p align="center">Built with ❤️ by <a href="https://khaledmansour.vercel.app">Khaled</a></p>
