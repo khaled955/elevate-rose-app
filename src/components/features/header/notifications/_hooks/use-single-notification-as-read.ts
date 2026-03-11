@@ -2,8 +2,12 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { markSingleNotificationsAsReadAction } from "../_actions/mark-single-notification-as-read.action";
 import { toast } from "sonner";
 import { MarkNotificationAsReadResponse } from "@/lib/types/notifications";
+import { useTranslations } from "next-intl";
 
 export function useSingleNotificationAsRead() {
+  // Translations
+  const t = useTranslations();
+  //Hooks
   const queryClient = useQueryClient();
 
   const {
@@ -21,8 +25,8 @@ export function useSingleNotificationAsRead() {
       }
       return payload;
     },
-    onSuccess: (data) => {
-      toast.success(data.message || "Notification marked as read");
+    onSuccess: () => {
+      toast.success(t("notification-marked-as-read-successfully"));
       // Invalidate and refetch notifications
       queryClient.invalidateQueries({ queryKey: ["notifications"] });
     },

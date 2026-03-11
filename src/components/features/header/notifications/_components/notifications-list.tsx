@@ -82,7 +82,7 @@ export default function NotificationsList() {
           <DropdownMenuLabel className="bg-maroon-700 dark:bg-soft-pink-200 text-white dark:text-black font-bold text-xl">
             {/* ✅ semantic heading inside label */}
             <h2 className="text-inherit">
-              {t("notifications")}{" "}
+              {t("notifications")}
               <span>
                 ({t("notif-number", { count: notifications.length })})
               </span>
@@ -95,8 +95,9 @@ export default function NotificationsList() {
           {/* the scroll container */}
           {notifications.length > 0 ? (
             <section
+            
               id="notifications-scroll"
-              className="max-h-[400px] overflow-y-auto"
+              className="max-h-[25rem] overflow-y-auto"
               aria-label="Notifications list"
             >
               <InfiniteScroll
@@ -112,17 +113,17 @@ export default function NotificationsList() {
                       aria-hidden="true"
                       focusable="false"
                     />
-                    <span className="sr-only">Loading more notifications</span>
+                    <span className="sr-only">{t('loading-more-notifications')}</span>
                   </div>
                 }
                 endMessage={
                   !isLoading && (
                     <p
-                      className="py-6 text-center font-semibold capitalize"
+                      className="py-2 text-center font-semibold capitalize"
                       role="status"
                       aria-live="polite"
                     >
-                      You have seen all notifications
+                      {t('you-have-seen-all-notifications')}
                     </p>
                   )
                 }
@@ -135,7 +136,7 @@ export default function NotificationsList() {
                       aria-hidden="true"
                       focusable="false"
                     />
-                    <span className="sr-only">Loading notifications</span>
+                    <span className="sr-only">{t('loading-notifications')}</span>
                   </div>
                 ) : (
                   <ul aria-label="Notifications">

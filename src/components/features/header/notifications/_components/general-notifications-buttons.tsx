@@ -4,6 +4,7 @@ import React from "react";
 import { useAllNotificationsAsRead } from "../_hooks/use-all-notifications-as-read";
 import { useDeleteAllNotifications } from "../_hooks/use-delete-all-notifications";
 import { cn } from "@/lib/utils/cn";
+import { useTranslations } from "next-intl";
 
 type GeneralNotificationsButtonsProps = {
   isEmpty?: boolean;
@@ -12,6 +13,8 @@ type GeneralNotificationsButtonsProps = {
 export default function GeneralNotificationsButtons({
   isEmpty,
 }: GeneralNotificationsButtonsProps) {
+  // Translations
+  const t = useTranslations();
   // mark all notifications as read
   const { onMarkAllAsRead, isPending: markReadIsPending } =
     useAllNotificationsAsRead();
@@ -29,7 +32,7 @@ export default function GeneralNotificationsButtons({
           isEmpty
             ? "text-zinc-400 dark:text-zinc-500"
             : "text-zinc-800 dark:text-zinc-50",
-          "text-sm font-semibold  flex gap-2 items-center"
+          "text-sm font-semibold  flex gap-2 items-center",
         )}
       >
         {deleteAllIsPending ? (
@@ -37,10 +40,10 @@ export default function GeneralNotificationsButtons({
             <Loader size={18} className="animate-spin" />
           </div>
         ) : (
-          <>
+          <span className="flex items-center gap-1">
             <BrushCleaning size={18} />
-            Clear all notifications
-          </>
+            {t("clear-all-notifications")}
+          </span>
         )}
       </button>
       {/* mark-all-as-read */}
@@ -51,7 +54,7 @@ export default function GeneralNotificationsButtons({
           isEmpty
             ? "text-zinc-400 dark:text-zinc-500"
             : "text-zinc-800 dark:text-zinc-50",
-          "text-sm font-semibold  flex gap-2 items-center"
+          "text-sm font-semibold  flex gap-2 items-center",
         )}
       >
         {markReadIsPending ? (
@@ -59,9 +62,9 @@ export default function GeneralNotificationsButtons({
             <Loader size={18} className="animate-spin" />
           </div>
         ) : (
-          <>
-            <CheckCheck size={15} /> Mark all as read
-          </>
+          <span className="flex items-center gap-1">
+            <CheckCheck size={15} /> {t('mark-all-as-read')}
+          </span>
         )}
       </button>
     </div>

@@ -2,8 +2,11 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { DeleteNotificationResponse } from "@/lib/types/notifications";
 import { deleteAllNotificationAction } from "../_actions/delete-all-notifications.action";
+import { useTranslations } from "next-intl";
 
 export function useDeleteAllNotifications() {
+  // Translations
+  const t = useTranslations();
   const queryClient = useQueryClient();
 
   const {
@@ -21,8 +24,8 @@ export function useDeleteAllNotifications() {
       }
       return payload;
     },
-    onSuccess: (data) => {
-      toast.success(data.message || "Notification deleted");
+    onSuccess: () => {
+      toast.success(t("notification-deleted"));
       // Invalidate and refetch notifications
       queryClient.invalidateQueries({ queryKey: ["notifications"] });
     },

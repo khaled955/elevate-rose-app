@@ -611,5 +611,16 @@
   "occassion-search": "occassion search...",
   "category-search": "Category search ...",
   "notifications": "Notifications",
-  "notif-number": "{count,number,number-base}"
+  "notif-number": "{count,number,number-base}",
+  "loading-more-notifications": "Loading more notifications",
+  "you-have-seen-all-notifications": "You have seen all notifications",
+  "clear-all-notifications": "Clear all notifications",
+  "mark-all-as-read": "Mark all as read",
+  "notification-marked-as-read": "Notification marked as read",
+  "notification-deleted": "Notification deleted successfully",
+  "loading-notifications": "Loading notifications",
+  "mark-as-read": "Mark as read",
+  "delete-notification": "Delete notification",
+  "notification-marked-as-read-successfully": "Notification marked as read successfully",
+  "notification-deleted-successfully": "Notification deleted successfully"
 }

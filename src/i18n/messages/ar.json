@@ -603,5 +603,16 @@
   "occassion-search": "البحث عن مناسبة .....",
   "category-search": "البحث عن فئة ....",
   "notifications": "الاشعارات",
-  "notif-number": "{count,number,number-base}"
+  "notif-number": "{count,number,number-base}",
+  "loading-more-notifications": "جارٍ تحميل المزيد من الإشعارات",
+  "you-have-seen-all-notifications": "لقد رأيت جميع الاشعارات",
+  "clear-all-notifications": "حذف جميع الاشعارات",
+  "mark-all-as-read": "تحويل الكل كمقروءة",
+  "notification-marked-as-read": "تم وضع علامة على الإشعار كمقروء",
+  "notification-deleted": "تم حذف الإشعار بنجاح",
+  "loading-notifications": "جارٍ تحميل الإشعارات",
+  "mark-as-read": "وضع علامة كمقروءة",
+  "delete-notification": "حذف الاشعار",
+  "notification-marked-as-read-successfully": "تم وضع علامة على الإشعار كمقروء بنجاح",
+  "notification-deleted-successfully": "تم حذف الإشعار بنجاح"
 }
