@@ -57,7 +57,7 @@ export default async function middleware(req: NextRequest) {
     return NextResponse.redirect(homeUrl);
   }
 
-  //Everything else — public
+  //Everything else
   return handleI18nRouting(req);
 }
 
