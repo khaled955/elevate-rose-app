@@ -10,10 +10,18 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import localFont from "next/font/local";
 
-// *=> meta-data
-export const metadata: Metadata = {
-  title: "Elevate|rose|app",
-};
+//meta-data
+export async function generateMetadata({
+  params: { locale },
+}: LayoutProps): Promise<Metadata> {
+  const isAr = locale === "ar";
+  return {
+    title: isAr ? "موقع | اليفيت | روز" : "Elevate | Rose | App",
+    description: isAr
+      ? "متجرك الأول للورود الفاخرة — أجمل الورود لكل مناسبة"
+      : "Your premier destination for luxury roses — beautiful flowers for every occasion",
+  };
+}
 
 // Fonts
 const geistSans = localFont({
@@ -76,10 +84,10 @@ export default async function LocaleLayout({
         className={` ${locale === "ar" ? diwany.className : sarabun.className} ${geistSans.variable} ${diwany.variable} ${edwardian.variable} ${geistMono.variable} ${zain.variable} ${diwany.variable} ${pinyon.variable} ${sarabun.variable} antialiased dark:bg-zinc-800`}
       >
         <Providers>
-          {/*//^^==> App */}
+          {/* App */}
           <div className="bg-white dark:bg-zinc-800">{children}</div>
 
-          {/*//??==> Sonner Toaster */}
+          {/* Sonner Toaster */}
           <Toaster />
         </Providers>
       </body>

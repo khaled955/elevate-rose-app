@@ -27,7 +27,6 @@ export default async function CategoriesWrapper({
     APIResponse<PaginatedResponse<Categories>>
   >(() => fetchAllCategoriesService(nextParams));
 
-  // ✅ 1) handle thrown errors first
   if (error) {
     return <p className="text-sm text-red-600 dark:text-red-400">{error}</p>;
   }

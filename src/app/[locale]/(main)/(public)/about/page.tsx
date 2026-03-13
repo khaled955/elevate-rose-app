@@ -8,7 +8,21 @@ import {
 import { useLocale, useTranslations } from "next-intl";
 import { cn } from "@/lib/utils/cn";
 import { Link } from "@/i18n/navigation";
+import { PageProps } from "../../../../../../.next/types/app/layout";
+import { Metadata } from "next";
 
+// meta data
+export async function generateMetadata({
+  params: { locale },
+}: PageProps): Promise<Metadata> {
+  const isAr = locale === "ar";
+  return {
+    title: isAr ? "إيليفيت | روز — من نحن" : "Elevate | Rose — About Us",
+    description: isAr
+      ? "تعرف على قصتنا وقيمنا — نقدم أجمل الورود الفاخرة بشغف واهتمام لكل مناسبة"
+      : "Learn about our story and values — we deliver the finest luxury roses with passion and care for every occasion",
+  };
+}
 export default function AboutPage() {
   // Translation
   const t = useTranslations("aboutPage");
@@ -216,8 +230,12 @@ export default function AboutPage() {
               <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
                 {t("story.title")}
               </h2>
-              <p className="text-zinc-600 dark:text-zinc-300">{t("story.p1")}</p>
-              <p className="text-zinc-600 dark:text-zinc-300">{t("story.p2")}</p>
+              <p className="text-zinc-600 dark:text-zinc-300">
+                {t("story.p1")}
+              </p>
+              <p className="text-zinc-600 dark:text-zinc-300">
+                {t("story.p2")}
+              </p>
             </div>
           </div>
 

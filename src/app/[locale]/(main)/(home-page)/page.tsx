@@ -8,6 +8,21 @@ import Testimonial from "./_components/home-testimonial";
 import OccasionList from "./_components/occasion-list";
 import ServicesList from "./_components/services-list";
 import MostPopular from "./_components/most-popular";
+import { PageProps } from "../../../../../.next/types/app/layout";
+import { Metadata } from "next";
+
+//meta-data
+export async function generateMetadata({
+  params: { locale },
+}: PageProps): Promise<Metadata> {
+  const isAr = locale === "ar";
+  return {
+    title: isAr ? "إيليفيت | روز — الرئيسية" : "Elevate | Rose — Home",
+    description: isAr
+      ? "اكتشف أجمل الورود الفاخرة لكل مناسبة — هدايا، باقات، وترتيبات زهور استثنائية"
+      : "Discover the finest luxury roses for every occasion — gifts, bouquets, and exceptional floral arrangements",
+  };
+}
 
 export default function HomePage() {
   return (

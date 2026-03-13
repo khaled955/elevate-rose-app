@@ -9,7 +9,40 @@ import { Loader } from "lucide-react";
 import SimilarProducts from "./_components/similar-products";
 import { notFound } from "next/navigation";
 import Spinner from "@/components/shared/spinner";
+import { Metadata } from "next";
+import catchError from "@/lib/utils/catch-error";
+import { Product } from "@/lib/types/product";
+import { fetchSpecificProductAction } from "./_actions/fetch-specific-product.action";
 
+// meta data
+export async function generateMetadata({
+  params: { locale, productId },
+}: RouteProps): Promise<Metadata> {
+  const isAr = locale === "ar";
+
+  const [payload, error] = await catchError<APIResponse<{ product: Product }>>(
+    () => fetchSpecificProductAction(productId),
+  );
+
+  if (error || !payload || "error" in payload) {
+    return {
+      title: isAr
+        ? "إيليفيت | روز — تفاصيل المنتج"
+        : "Elevate | Rose — Product Details",
+    };
+  }
+
+  const { product } = payload;
+
+  return {
+    title: isAr
+      ? `إيليفيت | روز — ${product.title}`
+      : `Elevate | Rose — ${product.title}`,
+    description: isAr
+      ? `اطلع على تفاصيل ${product.title} وتقييمات العملاء — اختر الوردة المثالية لمناسبتك`
+      : `View details and customer reviews for ${product.title} — find the perfect rose for your occasion`,
+  };
+}
 export default async function ProductDetailsPage({
   params: { productId },
 }: RouteProps) {
@@ -19,11 +52,7 @@ export default async function ProductDetailsPage({
   const session = await getServerSession(authOptions);
   return (
     <>
-      <Suspense
-        fallback={
-         <Spinner/>
-        }
-      >
+      <Suspense fallback={<Spinner />}>
         <ProductWrapper productId={productId} />
       </Suspense>
 
