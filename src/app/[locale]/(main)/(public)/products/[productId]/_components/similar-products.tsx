@@ -1,9 +1,9 @@
 import HomeSubtitle from "@/components/shared/home-subtitle";
 import catchError from "@/lib/utils/catch-error";
-import { fetchSimilarProductsAction } from "../_actions/fetch-similar-products.action";
 import { getTranslations } from "next-intl/server";
 import SimilarProductsCarousel from "./similar-products-carousel";
 import { SimilarProductsResponse } from "@/lib/types/similar-products";
+import { fetchSimilarProductsService } from "../_actions/fetch-similar-products.service";
 
 type SimilarProductsProps = {
   productId: string;
@@ -16,7 +16,7 @@ export default async function SimilarProducts({
   // Functions
   const [payload, error] = await catchError<
     APIResponse<SimilarProductsResponse>
-  >(() => fetchSimilarProductsAction(productId));
+  >(() => fetchSimilarProductsService(productId));
 
   //   catch error
   if (error || !payload || "error" in payload) {

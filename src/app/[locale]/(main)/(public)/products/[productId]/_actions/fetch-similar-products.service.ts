@@ -1,9 +1,7 @@
-"use server";
-
 import { SIMILAR_PRODUCTS } from "@/lib/services/apis/protected-apis/similar-products.api";
 import { getToken } from "@/lib/utils/manage-token";
 
-export async function fetchSimilarProductsAction(productId: string) {
+export async function fetchSimilarProductsService(productId: string) {
   // get-token
   const token = await getToken();
 

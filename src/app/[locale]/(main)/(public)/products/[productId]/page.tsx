@@ -12,7 +12,7 @@ import Spinner from "@/components/shared/spinner";
 import { Metadata } from "next";
 import catchError from "@/lib/utils/catch-error";
 import { Product } from "@/lib/types/product";
-import { fetchSpecificProductAction } from "./_actions/fetch-specific-product.action";
+import { fetchSpecificProductService } from "./_actions/fetch-specific-product.service";
 
 // meta data
 export async function generateMetadata({
@@ -21,7 +21,7 @@ export async function generateMetadata({
   const isAr = locale === "ar";
 
   const [payload, error] = await catchError<APIResponse<{ product: Product }>>(
-    () => fetchSpecificProductAction(productId),
+    () => fetchSpecificProductService(productId),
   );
 
   if (error || !payload || "error" in payload) {

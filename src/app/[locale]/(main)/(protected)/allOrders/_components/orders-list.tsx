@@ -1,11 +1,11 @@
 import catchError from "@/lib/utils/catch-error";
-import { fetchAllOrders } from "../_actions/fetch-all-orders.action";
 import { OrdersApiResponse } from "@/lib/types/orders";
 import OrderCard from "./order-card";
 import AppPagination from "@/components/shared/app-pagination";
 import { getLocale } from "next-intl/server";
 import { SearchParams } from "@/lib/types/common";
 import EmptyOrders from "./empty-orders";
+import { fetchAllOrdersService } from "../_actions/fetch-all-orders.service";
 
 type OrdersListProps = {
   searchParams: SearchParams;
@@ -15,9 +15,8 @@ export default async function OrdersList({ searchParams }: OrdersListProps) {
   // Translations
   const locale = await getLocale();
   // fetch-all-orders
-
   const [payload, error] = await catchError<OrdersApiResponse>(() =>
-    fetchAllOrders({ limit: "4", ...searchParams }),
+    fetchAllOrdersService({ limit: "4", ...searchParams }),
   );
   // catch-errors
 

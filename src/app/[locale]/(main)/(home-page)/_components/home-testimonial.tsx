@@ -1,11 +1,11 @@
 import { Testimonials } from "@/lib/types/testimonial";
 import TestimonialsCarousel from "@/components/features/testimonials/testimonial-carousel";
 import TestimonialsHeader from "@/components/features/testimonials/testimonials-header";
-import { fetchTestimonialsAction } from "../_actions/fetch-testimonials.action";
+import { fetchTestimonialsService } from "../_actions/fetch-testimonials.service";
 
 export default async function Testimonial() {
   const payload: APIResponse<PaginatedResponse<Testimonials>> =
-    await fetchTestimonialsAction();
+    await fetchTestimonialsService();
 
   //check if it's an error
   if ("error" in payload || payload.message !== "success") {

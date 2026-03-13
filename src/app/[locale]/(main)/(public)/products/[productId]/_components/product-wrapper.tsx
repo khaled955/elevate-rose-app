@@ -1,11 +1,11 @@
 import catchError from "@/lib/utils/catch-error";
 import { notFound } from "next/navigation";
-import { fetchSpecificProductAction } from "../_actions/fetch-specific-product.action";
 import { Product } from "@/lib/types/product";
 import ProductGallery from "./product-gallery";
 import ProductInfo from "./product-info";
 import { ThumbnailCarousel } from "@/components/shared/thumbnail-carousel";
 import ProductPreview from "./product-preview";
+import { fetchSpecificProductService } from "../_actions/fetch-specific-product.service";
 
 type ProductWraperProps = {
   productId: string;
@@ -18,7 +18,7 @@ export default async function ProductWrapper({
 
   //   fetch
   const [payload, error] = await catchError<APIResponse<{ product: Product }>>(
-    () => fetchSpecificProductAction(productId),
+    () => fetchSpecificProductService(productId),
   );
 
   //   catch error

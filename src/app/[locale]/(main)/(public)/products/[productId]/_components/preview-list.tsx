@@ -35,7 +35,7 @@ export default function PreviewList() {
     <section className="w-full md:w-[50%]">
       {!isLoading && reviews.length === 0 && (
         <p className="text-maroon-500 font-semibold p-2 text-center dark:text-soft-pink-200">
-          No Reviews Available Now!
+          {t("no-reviews-available-now")}
         </p>
       )}
       <main

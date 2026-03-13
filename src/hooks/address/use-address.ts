@@ -1,13 +1,13 @@
-import { fetchAddressAction } from "@/lib/actions/address/fetch-address.action";
+import { fetchAddressService } from "@/lib/actions/address/fetch-address.service";
 import { AddressesResponse } from "@/lib/types/addresses";
 import { useQuery } from "@tanstack/react-query";
 
 export function useAddress() {
-  const { data, isFetching, isLoading } = useQuery({
+  const { data, isFetching, isLoading,error } = useQuery({
     queryKey: ["address"],
     queryFn: async () => {
       const payload: APIResponse<AddressesResponse> =
-        await fetchAddressAction();
+        await fetchAddressService();
 
       if ("error" in payload) {
         throw new Error(payload.message || "error during fetch address!");
@@ -17,5 +17,5 @@ export function useAddress() {
     },
   });
 
-  return { data, isFetching, isLoading };
+  return { data, isFetching, isLoading,error };
 }

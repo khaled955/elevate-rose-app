@@ -1,14 +1,12 @@
-export async function fetchNotificationsAction(
+export async function fetchNotificationsService(
   pageNumber: number,
-  limit: number
+  limit: number,
 ) {
   const params = new URLSearchParams({
     page: pageNumber.toString(),
     limit: limit.toString(),
   });
-  const resp = await fetch(`/api/notifications?${params}`, {
-    cache: "no-store",
-  });
+  const resp = await fetch(`/api/notifications?${params}`);
 
   const payload = await resp.json();
 

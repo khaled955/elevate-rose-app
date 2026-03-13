@@ -3,11 +3,11 @@ import BestSellersCarousel from "./best-sellers-carousel";
 import { Products } from "@/lib/types/product";
 import { Suspense } from "react";
 import Spinner from "@/components/shared/spinner";
-import { fetchBestProductsAction } from "../_actions/fetch-best-products.action";
+import { fetchBestProductsService } from "../_actions/fetch-best-products.service";
 
 export default async function BestSellers() {
   const payload: APIResponse<PaginatedResponse<Products>> =
-    await fetchBestProductsAction(10);
+    await fetchBestProductsService(10);
 
   //check if it's an error
   if ("error" in payload || payload.message !== "success") {

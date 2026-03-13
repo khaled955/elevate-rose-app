@@ -1,14 +1,14 @@
 import { Occasions } from "@/lib/types/occasion";
 import MostPopularClient from "@/components/features/most-popular/most-popular-client";
-import { fetchOccasionsAction } from "../_actions/fetch-occasions.action";
+import { fetchOccasionsService } from "../_actions/fetch-occasions.service";
 
 export default async function MostPopular() {
   const payload: APIResponse<PaginatedResponse<Occasions>> =
-    await fetchOccasionsAction(4);
+    await fetchOccasionsService(4);
 
   if ("error" in payload || payload.message !== "success") {
     throw new Error(
-      payload.error || payload.message || "Failed to fetch occasions"
+      payload.error || payload.message || "Failed to fetch occasions",
     );
   }
 

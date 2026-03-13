@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useAddress } from "@/hooks/address/use-address";
 import { Loader2, MapPinPen } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -8,9 +8,17 @@ export default function Address() {
   const t = useTranslations();
 
   // Queries
-  const {data,isLoading,isFetching} = useAddress()
+  const { data, isLoading, isFetching, error } = useAddress();
 
-  const currentAddress = (!isLoading || !isFetching) && data?.addresses.length === 0 ?t("adress"):data?.addresses[0].city
+  if (error) {
+    return <p className="text-center text-red-500 text-sm">{error.message}</p>;
+  }
+
+  const currentAddress =
+    !data?.addresses || data.addresses.length === 0
+      ? t("adress")
+      : data.addresses[0].city;
+
   return (
     <div className="address">
       <p>{t("nav-deliver")}</p>
@@ -19,7 +27,11 @@ export default function Address() {
           <MapPinPen />
         </span>
         <span className="text-zinc-400 dark:text-soft-pink-300">
-          {(isLoading || isFetching) ? <Loader2 className="animate-spin"/> :currentAddress}
+          {isLoading || isFetching ? (
+            <Loader2 className="animate-spin" />
+          ) : (
+            currentAddress
+          )}
         </span>
       </div>
     </div>
