@@ -25,7 +25,6 @@ export async function GET(request: NextRequest) {
     headers: {
       Authorization: `Bearer ${token.accessToken}`,
     },
-    cache: "no-store",
   });
 
   const payload = await resp.json();

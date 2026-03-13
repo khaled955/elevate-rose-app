@@ -31,21 +31,20 @@ export default async function CategoriesWrapper({
     return <p className="text-sm text-red-600 dark:text-red-400">{error}</p>;
   }
 
-  // ✅ 2) guard payload
+  // guard payload
   if (!payload) return null;
 
-  // ✅ 3) handle API error shape
   if ("error" in payload) {
     throw new Error(payload.error || "Error During Fetch Categories!");
   }
 
-  // ✅ 4) extract categories
+  //categories
   const categories = payload.categories ?? [];
 
   if (categories.length === 0) {
     return (
       <p className="text-sm text-zinc-600 dark:text-zinc-400">
-        {t('no-categories-found')}
+        {t("no-categories-found")}
       </p>
     );
   }
@@ -53,7 +52,7 @@ export default async function CategoriesWrapper({
   return (
     <section className="space-y-4 my-6">
       <h1 className="text-2xl font-semibold capitalize text-zinc-800 dark:text-zinc-200 sm:text-3xl lg:text-4xl">
-        {t('categories')}
+        {t("categories")}
       </h1>
 
       {/* categories-list */}

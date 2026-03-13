@@ -6,7 +6,6 @@ export async function fetchAllCategoriesService(searchQuery: SearchParams) {
   const resp = await fetch(
     `${process.env.BASE_URL}${CATEGORIES.GET_ALL_CATEGORIES}?${convertSearchParams(searchQuery).toString()}`,
     {
-      cache: "no-store",
       next: {
         tags: ["all-categories"],
       },

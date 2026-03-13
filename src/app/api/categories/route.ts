@@ -11,7 +11,6 @@ export async function GET(request: NextRequest) {
     `${process.env.BASE_URL}${CATEGORIES.GET_ALL_CATEGORIES}?${new URLSearchParams(params)}`,
     {
       next: { tags: ["categories"] },
-      cache: "no-store",
     },
   );
 

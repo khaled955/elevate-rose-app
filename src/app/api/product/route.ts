@@ -11,7 +11,6 @@ export async function GET(request: NextRequest) {
     `${process.env.BASE_URL}${PRODUCTS.GET_ALL}?${new URLSearchParams(params)}`,
     {
       next: { tags: ["products"] },
-      cache: "no-store",
     },
   );
 

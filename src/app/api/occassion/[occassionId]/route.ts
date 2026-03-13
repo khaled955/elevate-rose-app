@@ -15,9 +15,7 @@ export async function GET(request: NextRequest, { params }: RouteProps) {
 
   const resp = await fetch(
     `${process.env.BASE_URL}${OCCASIONS.GET_CURRENT(occassionId)}`,
-    {
-      cache: "no-store",
-    },
+    
   );
 
   const payload = await resp.json();

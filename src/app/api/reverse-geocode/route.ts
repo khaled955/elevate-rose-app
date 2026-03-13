@@ -65,8 +65,6 @@ export async function GET(req: Request) {
         "User-Agent": "flower.elevateegy.com (contact: support@elevateegy.com)",
         "Accept-Language": locale === "ar" ? "ar" : "en",
       },
-      // optional caching:
-      // cache: "no-store",
     });
 
     if (!res.ok) {

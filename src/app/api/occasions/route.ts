@@ -11,7 +11,6 @@ export async function GET(request: NextRequest) {
     `${process.env.BASE_URL}${OCCASIONS.GET_ALL_OCCASIONS}?${new URLSearchParams(params)}`,
     {
       next: { tags: ["occasions"] },
-      cache: "no-store",
     },
   );
 

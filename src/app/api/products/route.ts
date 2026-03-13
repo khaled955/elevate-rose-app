@@ -8,9 +8,7 @@ export async function GET(request: NextRequest) {
   const occasion = searchParams.get("occasion") || DEFAULT_OCCASION ;
   const resp = await fetch(
     `${process.env.BASE_URL}${PRODUCTS.MOST_POPULAR(occasion)}`,
-    {
-      cache:"no-store"
-    }
+    
   );
 
   const payload = await resp.json();

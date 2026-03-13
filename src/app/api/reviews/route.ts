@@ -6,9 +6,6 @@ export async function GET(req: NextRequest) {
   const searchQuery = req.nextUrl.searchParams;
   const resp = await fetch(
     `${process.env.BASE_URL}${REVIEWS.GET_ALL}?${searchQuery.toString()}`,
-    {
-      cache: "no-store",
-    },
   );
 
   const payload = await resp.json();
