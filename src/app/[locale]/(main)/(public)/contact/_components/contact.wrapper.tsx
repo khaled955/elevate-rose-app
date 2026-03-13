@@ -1,5 +1,4 @@
 "use client";
-import * as React from "react";
 import { useTranslations } from "next-intl";
 import {
   Mail,
@@ -17,6 +16,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 
 type ContactFormState = {
   name: string;
@@ -39,10 +39,10 @@ export default function ContactWrapper() {
   const t = useTranslations("support");
 
   // State
-  const [form, setForm] = React.useState<ContactFormState>(INITIAL_FORM);
-  const [isSubmitting, setIsSubmitting] = React.useState(false);
-  const [submitError, setSubmitError] = React.useState<string | null>(null);
-  const [submitSuccess, setSubmitSuccess] = React.useState(false);
+  const [form, setForm] = useState<ContactFormState>(INITIAL_FORM);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   // Variables
   const isDisabled =
@@ -131,14 +131,13 @@ export default function ContactWrapper() {
               <div className="min-w-0">
                 <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
                   {/* You can add translations for these labels later */}
-                  Our Location
+                  {t("our-location")}
                 </h3>
                 <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
-                  Visit our flower studio and explore our fresh collections in
-                  person.
+                  {t("visit-our")}
                 </p>
                 <p className="mt-2 text-sm font-medium text-zinc-900 dark:text-zinc-50">
-                  Riyadh, Saudi Arabia
+                  {t("riyadh-saudi-arabia")}
                 </p>
               </div>
             </div>
@@ -151,10 +150,10 @@ export default function ContactWrapper() {
               </span>
               <div className="min-w-0">
                 <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-                  Call Us
+                  {t("call-us")}
                 </h3>
                 <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
-                  Our team is available to assist you with orders and questions.
+                  {t("our-team")}
                 </p>
                 <p className="mt-2 text-sm font-medium text-zinc-900 dark:text-zinc-50">
                   +966 50 000 0000
@@ -170,10 +169,10 @@ export default function ContactWrapper() {
               </span>
               <div className="min-w-0">
                 <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-                  Email Support
+                  {t("email-support")}
                 </h3>
                 <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
-                  Send us an email and we’ll respond as soon as possible.
+                  {t("send-us")}
                 </p>
                 <p className="mt-2 text-sm font-medium text-zinc-900 dark:text-zinc-50">
                   support@roseapp.com
@@ -189,12 +188,10 @@ export default function ContactWrapper() {
               </span>
               <div className="min-w-0">
                 <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-                  Working Hours
+                  {t("working-hours")}
                 </h3>
                 <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
-                  Sunday – Thursday: 9 AM – 10 PM
-                  <br />
-                  Friday – Saturday: 2 PM – 11 PM
+                 {t("info.hours.description")}
                 </p>
               </div>
             </div>

@@ -367,7 +367,15 @@
     },
     "search": {
       "placeholder": "Search help topics..."
-    }
+    },
+    "our-location": "Our location",
+    "visit-our": " Visit our flower studio and explore our fresh collections in\n                  person.",
+    "riyadh-saudi-arabia": "Riyadh, Saudi Arabia",
+    "call-us": "Call Us",
+    "our-team": "                  Our team is available to assist you with orders and questions.\n",
+    "email-support": "Email Support",
+    "send-us": "                  Send us an email and we’ll respond as soon as possible.\n",
+    "working-hours": "Working Hours"
   },
   "clear-whishlists-products-done-successfully": "Clear whishlists products done successfully",
   "remove-all-products-done-successfully": "remove all products done successfully",
@@ -622,5 +630,18 @@
   "mark-as-read": "Mark as read",
   "delete-notification": "Delete notification",
   "notification-marked-as-read-successfully": "Notification marked as read successfully",
-  "notification-deleted-successfully": "Notification deleted successfully"
+  "notification-deleted-successfully": "Notification deleted successfully",
+  "our-location": "Our Location",
+  "vision": "Visit our flower studio and explore our fresh collections in person.",
+  "visit-our": "Visit our flower studio and explore our fresh collections in person.",
+  "riyadh-saudi-arabia": "Riyadh, Saudi Arabia",
+  "call-us": "Call Us",
+  "our-team": "Our team is available to assist you with orders and questions.",
+  "email-support": "Email Support",
+  "send-us": "Send us an email and we’ll respond as soon as possible.",
+  "working-hours": "Working Hours",
+  "hours": {
+    "weekdays": "Sunday – Thursday: 9 AM – 10 PM",
+    "weekend": "Friday – Saturday: 2 PM – 11 PM"
+  }
 }
