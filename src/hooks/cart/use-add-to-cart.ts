@@ -26,7 +26,9 @@ export function useAddToCart() {
     onError: (error) => {
       if (error.message.toLocaleLowerCase() === "sold out") {
         toast.error(t("out-of-stock-now"));
+        return;
       }
+      toast.error(error.message || "Failed to add product to cart!");
     },
   });
 

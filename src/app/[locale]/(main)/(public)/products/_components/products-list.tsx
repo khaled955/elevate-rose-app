@@ -5,7 +5,7 @@ import { fetchAllProductService } from "@/lib/actions/products/fetch-all-product
 import { SearchParams } from "@/lib/types/common";
 import { Products } from "@/lib/types/product";
 import catchError from "@/lib/utils/catch-error";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 type ProductsListProps = {
   pathName: string;
@@ -17,12 +17,13 @@ export default async function ProductsList({
   searchParams,
 }: ProductsListProps) {
   // Translation
+  const t = await getTranslations()
   const locale = await getLocale();
 
   const nextParams: SearchParams = {
     ...searchParams,
     page: searchParams.page ?? "1",
-    limit: searchParams.limit ?? "6",
+    limit: searchParams.limit ?? "8",
   };
 
   const [payload, error] = await catchError<PaginatedResponse<Products>>(() =>
@@ -37,7 +38,7 @@ export default async function ProductsList({
 
   return (
     <div className="w-full flex-1">
-      <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {payload.products.length > 0 &&
           payload.products.map((product) => (
             <ProductCard
@@ -69,11 +70,10 @@ export default async function ProductsList({
             🌸
           </span>
 
-          <span className="font-medium">No products found for this page</span>
+          <span className="font-medium">{t('no-products-found-for-this-page')}</span>
 
           <span className="max-w-md leading-relaxed">
-            The selected filters didn’t match any products. You can adjust your
-            filters or explore all available items.
+            {t('product-filter')}
           </span>
 
           <Link

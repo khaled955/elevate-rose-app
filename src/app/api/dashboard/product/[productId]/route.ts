@@ -15,7 +15,9 @@ export async function GET(request: NextRequest, { params }: RouteProps) {
 
   const resp = await fetch(
     `${process.env.BASE_URL}${PRODUCTS.GET_SPECIFIC_PRODUCT(productId)}`,
-    
+    {
+      cache: "no-store",
+    },
   );
 
   const payload = await resp.json();

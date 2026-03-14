@@ -24,20 +24,29 @@ export async function generateMetadata({
       : "Browse our full collection of luxury roses — filter by occasion, rating, and price",
   };
 }
+
 export default function Productspage({ searchParams }: RouteProps) {
   const pathName = `/products`;
 
+  const filters = (
+    <FilterList>
+      <FilterByCategory />
+      <FilterByOccasions />
+      <FilterByRate />
+      <FilterByPrice />
+      <ResetAllQueryiesButton />
+    </FilterList>
+  );
+
   return (
     <div className="flex flex-col md:flex-row gap-5 my-4">
-      <MobileFiltersSheet title="Filters">
-        <FilterList>
-          <FilterByCategory />
-          <FilterByOccasions />
-          <FilterByRate />
-          <FilterByPrice />
-          <ResetAllQueryiesButton />
-        </FilterList>
-      </MobileFiltersSheet>
+      {/* Desktop sidebar*/}
+      <aside className="hidden md:block md:w-[260px] lg:w-[300px] flex-shrink-0">
+        {filters}
+      </aside>
+
+      {/* Mobile sheet */}
+      <MobileFiltersSheet title="Filters">{filters}</MobileFiltersSheet>
 
       <Suspense
         fallback={

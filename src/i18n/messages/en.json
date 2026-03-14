@@ -644,5 +644,7 @@
     "weekdays": "Sunday – Thursday: 9 AM – 10 PM",
     "weekend": "Friday – Saturday: 2 PM – 11 PM"
   },
-  "no-reviews-available-now": "No Reviews Available Now!"
+  "no-reviews-available-now": "No Reviews Available Now!",
+  "no-products-found-for-this-page": "No products found for this page",
+  "product-filter": "The selected filters didn’t match any products. You can adjust your filters or explore all available items."
 }

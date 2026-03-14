@@ -13,7 +13,7 @@ export function useCurrentCategory({
   categoryId,
   enabled,
 }: UseCurrentCategoryArgs) {
-  const { data, error, isPending, refetch, isError,isFetching } = useQuery({
+  const { data, error, isPending, refetch, isError, isFetching } = useQuery({
     queryKey: ["category-details", categoryId],
     enabled: Boolean(enabled && categoryId),
     queryFn: async () => {
@@ -28,10 +28,7 @@ export function useCurrentCategory({
 
       return payload;
     },
-    staleTime: 1000 * 30,
-    gcTime: 1000 * 60 * 5,
-    retry: 1,
   });
 
-  return { data, error, isPending, refetch, isError,isFetching };
+  return { data, error, isPending, refetch, isError, isFetching };
 }

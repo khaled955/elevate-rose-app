@@ -91,7 +91,7 @@ export default function SummaryCatchAll() {
       {isCheckOutDisplay && (
         <Button
           onClick={handleNavigateToCheckout}
-          className="mt-4 w-full py-6 dark:bg-maroon-700 dark:hover:bg-maroon-800"
+          className="mt-4 w-full py-6 dark:bg-maroon-700 dark:text-zinc-50 dark:hover:bg-maroon-800"
         >
           <span>{t("checkout")}</span>
           {locale === "ar" ? <MoveLeft /> : <MoveRight />}
